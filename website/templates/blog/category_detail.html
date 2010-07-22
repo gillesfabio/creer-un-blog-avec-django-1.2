@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+
+{% block title %}{{ object.name }}{% endblock title %}
+
+{% block content %}
+<h2>{{ object.name }}</h2>
+<ul>
+    {% for entry in object.online_entry_set.all %}
+    <li>
+        <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a> | 
+        <small>
+        {{ entry.publication_date|date:"Y/m/d @ H:i:s" }} - 
+        <a href="{{ entry.category.get_absolute_url }}">{{ entry.category.name }}</a>
+        </small>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

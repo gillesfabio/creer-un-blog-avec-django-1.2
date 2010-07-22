@@ -1,0 +1,24 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Latest entries" %}{% endblock title %}
+
+{% block content %}
+  <h2>{% trans "Latest entries" %}</h2>
+  {% if latest %}
+      {% for entry in latest %}
+      <div class="entry">
+          <h3><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h3>
+          <p class="entry-meta">
+              {{ entry.publication_date|date:"Y/m/d @ H:i:s" }} - 
+              <a href="{{ entry.category.get_absolute_url }}">{{ entry.category.name }}</a>
+          </p>
+          <div class="entry-body">
+              {{ entry.body|safe }}
+          </div>
+      </div>    
+      {% endfor %}
+  {% else %}
+      <p><strong>{% trans "No entry yet" %}.</strong></p>
+  {% endif %}
+{% endblock content %}

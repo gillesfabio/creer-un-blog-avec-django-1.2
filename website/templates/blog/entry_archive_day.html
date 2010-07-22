@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+
+{% block title %}{{ day|date:"Y/m/d" }}{% endblock title %}
+
+{% block content %}
+  <h2>{{ day|date:"Y/m/d" }}</h2>
+  <ul>
+      {% for entry in object_list %}
+      <li>
+          <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a> | 
+          <small>
+          {{ entry.publication_date|date:"Y/m/d @ H:i:s" }} - 
+          <a href="{{ entry.category.get_absolute_url }}">{{ entry.category.name }}</a>
+          </small>
+      </li>
+      {% endfor %}
+  </ul>
+{% endblock content %}

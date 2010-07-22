@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block content %}
+  <div class="entry">
+      <h2>{{ object.title }}</h2>
+      <p class="entry-meta">
+          {{ object.publication_date|date:"Y/m/d @ H:i:s" }} - 
+          <a href="{{ object.category.get_absolute_url }}">{{ object.category.name }}</a>
+      </p>
+      <div class="entry-body">
+          {{ object.body|safe }}      
+      </div>
+  </div>
+{% endblock content %}

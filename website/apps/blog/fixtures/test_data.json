@@ -1,0 +1,52 @@
+[
+    {
+        "pk": 1, 
+        "model": "blog.category", 
+        "fields": {
+            "creation_date": "2010-07-21 13:48:19", 
+            "name": "Test", 
+            "modification_date": "2010-07-21 13:48:19", 
+            "slug": "test"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "blog.category", 
+        "fields": {
+            "creation_date": "2010-07-21 14:12:44", 
+            "name": "Offline", 
+            "modification_date": "2010-07-21 14:12:51", 
+            "slug": "offline"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "blog.entry", 
+        "fields": {
+            "category": 1, 
+            "status": 1, 
+            "modification_date": "2010-07-21 13:48:44", 
+            "author": 1, 
+            "title": "Test entry", 
+            "body": "<p><strong>Online entry.</strong></p>", 
+            "creation_date": "2010-07-21 13:48:44", 
+            "publication_date": "2010-07-21 20:48:26", 
+            "slug": "test-entry"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "blog.entry", 
+        "fields": {
+            "category": 2, 
+            "status": 0, 
+            "modification_date": "2010-07-21 14:13:07", 
+            "author": 1, 
+            "title": "Offline Entry", 
+            "body": "<p><strong>Offline entry.</strong></p>", 
+            "creation_date": "2010-07-21 13:49:19", 
+            "publication_date": "2010-07-21 20:49:08", 
+            "slug": "offline-entry"
+        }
+    }
+]
